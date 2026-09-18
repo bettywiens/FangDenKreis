@@ -4,6 +4,7 @@ public class Kreis{
   int randomNumber;
   int vorherNumber = 1;
   int radius;
+  int schritt = 1;
 
   
   Kreis(int radius){
@@ -32,28 +33,28 @@ public class Kreis{
       if (xKoordinate > spielfeldGroesse - 1){
         xKoordinate = 1;
       } else {
-        xKoordinate++; // nach rechts
+        xKoordinate+=schritt; // nach rechts
       }
       vorherNumber = 1;
     } else if (randomNumber ==2 && vorherNumber != 1){
       if (xKoordinate < 1){
         xKoordinate = spielfeldGroesse - 1;
       } else {
-        xKoordinate--; // nach links
+        xKoordinate-=schritt; // nach links
       }
       vorherNumber = 2;
     } else if (randomNumber == 3 && vorherNumber != 4){
       if (yKoordinate > spielfeldGroesse - 1){
         yKoordinate = 1;
       } else {
-        yKoordinate++; // nach unten
+        yKoordinate+=schritt; // nach unten
       }
       vorherNumber = 3;
     }else if (randomNumber == 4 && vorherNumber != 3){
       if (yKoordinate < 1){
         yKoordinate = spielfeldGroesse - 1;
       } else {
-        yKoordinate--; // nach oben
+        yKoordinate-=schritt; // nach oben
       }
       vorherNumber = 4;
     }
